@@ -10,12 +10,12 @@ block content
                 div.col
                     input.form-control(type="text", name="author", placeholder="Author(Optional)")
                 div.col
-                    button(type="submit", class="btn btn-primary") Search
+                    button(type="submit", class="btn btn-dark") Search
 
     if res
         div.card-columns
             each result in res
-                div(class="card mb-3")
+                div(class="card mb-3 book")
                     div(class="row no-gutters")
                         div.col-md-4
                             - var images = result.volumeInfo.imageLinks

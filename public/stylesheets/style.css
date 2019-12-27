@@ -1,9 +1,14 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #dceeb1;
+  font: 14px "Roboto", Helvetica, Arial, sans-serif;
+  background-color: #d7d9dd;
 }
 
 a {
-  color: #80543f;
+  color: #434e5f;
+}
+.book {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
 }

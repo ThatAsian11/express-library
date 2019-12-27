@@ -6,8 +6,8 @@ block head
 block content
     //- - function back() {window.history.back()};
     //- a(href="/", class="badge badge-pill badge-primary", style="float: right; position: fixed; display: sticky") Home
-    button(onclick="back()", class="btn btn-primary", style="position: fixed") Back
-    div.container
+    button(onclick="back()", class="btn btn-dark", style="position: fixed") Back
+    div(class="container book")
             div(class="row no-gutters")
                 div.col-md-4
                     - var images = res.volumeInfo.imageLinks
