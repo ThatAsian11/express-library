@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  div.container.form-group
+    form(method="post", action="/")
+      input.form-control(type="text", name="searched")
+      button(type="submit", class="btn btn-primary") Search

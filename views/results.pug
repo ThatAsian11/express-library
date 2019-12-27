@@ -1,0 +1,43 @@
+extends layout
+block head
+    title= "Library"
+block content
+    div.container.form-group
+        form(method="post", action="/")
+            div.row
+                div.col
+                    input.form-control(type="text", name="searched",placeholder="Book Title", required)
+                div.col
+                    input.form-control(type="text", name="author", placeholder="Author(Optional)")
+                div.col
+                    button(type="submit", class="btn btn-primary") Search
+
+    if res
+        div.card-columns
+            each result in res
+                div(class="card mb-3")
+                    div(class="row no-gutters")
+                        div.col-md-4
+                            - var images = result.volumeInfo.imageLinks
+                            - var link = ''
+                            if (images)
+                                - var link = images.thumbnail
+                            img(class='card-img',src=link)
+                        div.col-md-8
+                            div.card-body
+                                h5.card-title
+                                    - var location = "/book/" + result.id
+                                    a(href=location)= result.volumeInfo.title
+                                - var text = result.volumeInfo.description
+                                - var trimmedText = ''
+                                - var length = 500
+                                if (text)
+                                    //- console.log(result.volumeInfo.description)
+                                    - var textSize = text.length
+                                    - var trimmedText = textSize > length ? text.substring(0, length) + "..." : text
+                                p.card-text= trimmedText
+                                p.card-text
+                                    small.text-muted= result.volumeInfo.authors + ' | ' + result.volumeInfo.publishedDate
+                    
+
+
