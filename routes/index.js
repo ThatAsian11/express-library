@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
   res.render('results', {res: false});
 })
 
-
 router.post('/', async(req, res, next) => {
   let title = req.body.searched;
   let author = req.body.author;
@@ -34,12 +33,11 @@ router.post('/', async(req, res, next) => {
   }
   // res.redirect('/')
   res.render('results', {res: result});
-
 })
 
 router.get('/book/:id', async(req, res) => {
   code = req.params.id;
-  console.log(code);
+  // console.log(code);
   let url = "https://www.googleapis.com/books/v1/volumes/" + code
   let result = ''
   try {
@@ -50,8 +48,6 @@ router.get('/book/:id', async(req, res) => {
     console.log(err);
   }
   res.render('book', {res: result});
-
-
 })
 
 module.exports = router;
